@@ -1,0 +1,33 @@
+<div class="container">
+  <form #registerForm="ngForm">
+    <div class="row justify-content-center mt-5">
+      <div class="form-group">
+        <p class="lead">SignUp USER</p><br>
+
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="email" class="form-control" placeholder="Email" [(ngModel)]="value.Email">
+        </div>
+        <label>UserName</label>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Username" [(ngModel)]="value.UserName">
+        </div>
+        <label>Password</label>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Password" [(ngModel)]="value.Password">
+        </div>
+        <label>Re-password</label>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Password">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="form-group">
+          <button type="button" class="btn btn-primary text-center">SignUp</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

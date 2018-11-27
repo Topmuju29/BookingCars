@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" [routerLink]="['/home']">Booking</a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link" [routerLink]="['/home']">Home</a>
+      </li>
+      <li *ngIf="LoggedIn()" class="nav-item">
+        <a class="nav-link" [routerLink]="['/status']" routerLinkActive="router-link-active">Status Cars</a>
+      </li>
+      <li>
+        <button *ngIf="LoggedIn()" class="btn btn-outline-success my-2 my-sm-0 mr-auto" (click)="logout()">Logout</button>
+      </li>
+    </ul>
+    <form *ngIf="!LoggedIn()" #loginForm="ngForm" (ngSubmit)="login()" class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Username" name="username" required [(ngModel)]="Value.username">
+      <input class="form-control mr-sm-2" type="password" placeholder="Password" name="password" required [(ngModel)]="Value.password">
+      <button [disabled]="!loginForm.valid" class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit">Login</button>
+    </form>
+    <button class="btn btn-outline-success my-2 my-sm-0" (click)="register()">SignUp</button>
+  </div>
+</nav>
